@@ -1,0 +1,31 @@
+{
+    "sites": [
+        {
+            "name": "Eat this",
+            "url": "eat-this.org",
+            "selector": ".wprm-recipe-ingredients-container"
+        },
+        {
+            "name": "allrecipes",
+            "url": "allrecipes.com",
+            "selector": ".mm-recipes-structured-ingredients__list"
+        },
+        {
+            "name": "food.com",
+            "url": "food.com",
+            "selector": ".ingredient-list"
+        },
+        {
+            "name": "budgetbytes",
+            "url": "budgetbytes.com",
+            "selector": ".wprm-recipe-ingredients",
+            "dontAddWakelock": true
+        },
+        {
+            "name": "pinchofyum",
+            "ulr": "pinchofyum.com",
+            "selector": ".tasty-recipes-ingredients",
+            "dontAddCheckboxes": true
+        }
+    ]
+}
