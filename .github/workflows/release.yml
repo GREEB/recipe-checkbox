@@ -21,11 +21,11 @@ jobs:
         with:
           node-version-file: .nvmrc
           cache: pnpm
-      - name: Install Node.js
-        uses: actions/setup-node@v4
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
         with:
-          node-version: 20
-          cache: 'pnpm'
+          version: 9
+          run_install: false
       - run: pnpm ci
       - name: Test and build
         run: pnpm test
@@ -58,11 +58,11 @@ jobs:
     environment: Firefox
     runs-on: ubuntu-latest
     steps:
-      - name: Install Node.js
-        uses: actions/setup-node@v4
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
         with:
-          node-version: 20
-          cache: 'pnpm'
+          version: 9
+          run_install: false
       - uses: actions/download-artifact@v3
       - run: pnpx web-ext@7 sign --use-submission-api --channel listed
         working-directory: artifact

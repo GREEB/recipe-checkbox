@@ -7,21 +7,21 @@ jobs:
   security:
     runs-on: ubuntu-latest
     steps:
-      - name: Install Node.js
-        uses: actions/setup-node@v4
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
         with:
-          node-version: 20
-          cache: 'pnpm'
+          version: 9
+          run_install: false
       - uses: actions/checkout@v2
       - run: pnpx lockfile-lint --path package-lock.json --validate-https
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Install Node.js
-        uses: actions/setup-node@v4
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
         with:
-          node-version: 20
-          cache: 'pnpm'
+          version: 9
+          run_install: false
       - uses: actions/checkout@v2
       - run: pnpm install
       - run: pnpm test
