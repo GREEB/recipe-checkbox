@@ -1,9 +1,11 @@
 .ingredient-list li:has(h4) > input {
-    display: none;
-  }
-.ingredient-list li{
-    display: block !important;
+	display: none;
 }
-.ingredient-list{
-    display: block !important;
+
+.ingredient-list li {
+	display: block !important;
+}
+
+.ingredient-list {
+	display: block !important;
 }
