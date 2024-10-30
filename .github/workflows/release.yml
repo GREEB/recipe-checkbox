@@ -21,6 +21,11 @@ jobs:
         with:
           node-version-file: .nvmrc
           cache: pnpm
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
       - run: pnpm ci
       - name: Test and build
         run: pnpm test
@@ -53,8 +58,13 @@ jobs:
     environment: Firefox
     runs-on: ubuntu-latest
     steps:
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
       - uses: actions/download-artifact@v3
-      - run: npx web-ext@7 sign --use-submission-api --channel listed
+      - run: pnpx web-ext@7 sign --use-submission-api --channel listed
         working-directory: artifact
         env:
           WEB_EXT_API_KEY: ${{ secrets.WEB_EXT_API_KEY }}
