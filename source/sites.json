@@ -23,7 +23,7 @@
         },
         {
             "name": "pinchofyum",
-            "ulr": "pinchofyum.com",
+            "url": "pinchofyum.com",
             "selector": ".tasty-recipes-ingredients",
             "dontAddCheckboxes": true
         }
