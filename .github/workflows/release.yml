@@ -27,10 +27,10 @@ jobs:
           node-version-file: .nvmrc
           cache: pnpm
       - run: pnpm install
-      - name: Test and build
-        run: pnpm test
       - name: Populate manifest
         run: pnpx tsx populate.ts
+      - name: Test and build
+        run: pnpm test
       - name: Create tag if necessary
         uses: fregante/daily-version-action@v2
       - name: Update manifest.json with version ${{ env.DAILY_VERSION}}
