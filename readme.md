@@ -1,5 +1,5 @@
 # Recipe Checkbox
-![before](source/icon.png)
+![icon](source/icon.png)
 
 > A firefox add-on to add checkboxes to recipes and also a wake lock so the screen does not turn of when cooking
 
