@@ -52,7 +52,6 @@ jobs:
           gh release create "$DAILY_VERSION" --generate-notes "$FILENAME"
   Firefox:
     # Disabled until https://github.com/fregante/browser-extension-template/issues/78
-    if: needs.Version.outputs.created
     needs: Version
     name: Submit (Firefox)
     environment: Firefox
