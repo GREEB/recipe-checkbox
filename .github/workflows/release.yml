@@ -17,15 +17,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3
-        with:
-          node-version-file: .nvmrc
-          cache: pnpm
       - uses: pnpm/action-setup@v4
         name: Install pnpm
         with:
           version: 9
           run_install: false
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
       - run: pnpm ci
       - name: Test and build
         run: pnpm test
